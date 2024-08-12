@@ -2,33 +2,51 @@
 
 
 function playRound(){
-    const computerSelection = getComputerChoice()
-    const humanSelection = getHumanChoice()    
+   let humanScore = 0
+   let computerScore = 0
+   let draw = 0
 
-    if (humanSelection !== "rock" && humanSelection !== "paper" && humanSelection !== "scissor") {
-        return "Enter valid option";
+    for(let i = 0; i < 5; i++){
+        const computerSelection = getComputerChoice()
+        const humanSelection = getHumanChoice()    
+        if (humanSelection !== "rock" && humanSelection !== "paper" && humanSelection !== "scissor") {
+            return "Enter valid option";
+        }
+    
+        if(humanSelection === computerSelection){
+            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            draw++
+            console.log("draw current standing your score" + humanScore + " opponents score" + computerScore)
+        }
+        else if(humanSelection === "scissor" && computerSelection === "paper"){
+            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log("You win")
+            humanScore ++
+            console.log("Your Score " + humanScore)
+        }
+        else if(humanSelection === "paper" && computerSelection === "rock"){
+            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log("You win")
+            humanScore ++
+            console.log("Your Score " + humanScore)
+        }
+        else if(humanSelection === "rock" && computerSelection === "scissor"){
+            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log("You win")
+            humanScore ++
+            console.log("Your Score " + humanScore)
+        }
+        else{
+            console.log("You choose "+ humanSelection + " your oppenent choose " + computerSelection)
+            console.log("Computer Wins")
+            computerScore++
+            console.log("Your opponents " + computerScore)
+        }
+        
     }
-
-    if(humanSelection === computerSelection){
-        console.log("You choose "+ humanSelection + " your opponent choose" + computerSelection)
-        console.log(`draw`)
-    }
-    else if(humanSelection === "scissor" && computerSelection === "paper"){
-        console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
-        console.log("You win")
-    }
-    else if(humanSelection === "paper" && computerSelection === "rock"){
-        console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
-        console.log("You win")
-    }
-    else if(humanSelection === "rock" && computerSelection === "scissor"){
-        console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
-        console.log("You win")
-    }
-    else{
-        console.log("You choose "+ humanSelection + " your oppenent choose " + computerSelection)
-        console.log("Computer Wins")
-    }
+        console.log("Your total score is " + humanScore)
+        console.log("Your opponents score is " + computerScore)
+        console.log("total draw is " + draw)
     
 
 }
