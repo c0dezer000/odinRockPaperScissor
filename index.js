@@ -14,33 +14,29 @@ function playRound(){
         }
     
         if(humanSelection === computerSelection){
-            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log(`You chosse ${humanSelection} and your opponent choose ${computerSelection}`)
             draw++
-            console.log("draw current standing your score" + humanScore + " opponents score" + computerScore)
+            
         }
         else if(humanSelection === "scissor" && computerSelection === "paper"){
-            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
             console.log("You win")
             humanScore ++
-            console.log("Your Score " + humanScore)
         }
         else if(humanSelection === "paper" && computerSelection === "rock"){
-            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
             console.log("You win")
             humanScore ++
-            console.log("Your Score " + humanScore)
         }
         else if(humanSelection === "rock" && computerSelection === "scissor"){
-            console.log("You choose "+ humanSelection + " your opponent choose " + computerSelection)
+            console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
             console.log("You win")
             humanScore ++
-            console.log("Your Score " + humanScore)
         }
         else{
-            console.log("You choose "+ humanSelection + " your oppenent choose " + computerSelection)
+            console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
             console.log("Computer Wins")
             computerScore++
-            console.log("Your opponents " + computerScore)
         }
         
     }
