@@ -44,6 +44,12 @@
     padding-top: 50px;
     transform: scaleX(-1);
 }
+.resultsDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .btnField{
     display: flex;
     align-items: center;
@@ -78,6 +84,7 @@
 .restart{
     display: flex;
     gap: 20px;
+    padding-top: 20px;
 }
 #yesResetBtn{
     width: 150px;

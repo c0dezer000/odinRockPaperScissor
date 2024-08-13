@@ -14,14 +14,24 @@
             <h1>Rock Paper Scissor</h1>
             <p>Try your Luck</p>
         </div>
-        <div class="display">
-            <div class="myDisplay">
-                <p id="yourScore">You:<span id="yourScoreValue">0</span></p>
-                <img src="assets/clipart4288836.png" id="playerPick">
+        <div class="gameDisplay ">
+            <div class="display" id="display">
+                <div class="myDisplay">
+                    <p id="yourScore">You:<span id="yourScoreValue">0</span></p>
+                    <img src="assets/clipart4288836.png" id="playerPick">
+                </div>
+                <div class="opponentsDisplay">
+                    <p id="opponentScore">Opponent:<span id="opponentScoreValue">0</span></p>
+                    <img src="assets/clipart4288836.png" id="opponentsPickPick">
+                </div>
             </div>
-            <div class="opponentsDisplay">
-                <p id="opponentScore">Opponent:<span id="opponentScoreValue">0</span></p>
-                <img src="assets/clipart4288836.png" id="opponentsPickPick">
+            <div class="resultsDisplay hide" id="resultsDisplay">
+                <h1 id="resultText">Winner</h1>
+                <p>Total Rounds:<span id="totalRounds"></span></p>
+                <p>Your Score:<span id="yourStats"></span></p>
+                <p>Opponents Score:<span id="opponentsStats"></span></p>
+                <p>Draws:<span id="drawStats"></span></p>
+                
             </div>
         </div>
         <div class="btnField ">
