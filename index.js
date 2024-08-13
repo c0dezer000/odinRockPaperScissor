@@ -1,69 +1,3 @@
-// //  0 = rock 1 = paper 2 = scissor?
-
-
-// function playRound(){
-//    let humanScore = 0
-//    let computerScore = 0
-//    let draw = 0
-
-//     for(let i = 0; i < 5; i++){
-//         const computerSelection = getComputerChoice()
-//         const humanSelection = getHumanChoice()    
-//         if (humanSelection !== "rock" && humanSelection !== "paper" && humanSelection !== "scissor") {
-//             prompt("Enter Valid option")
-//         }
-    
-//         if(humanSelection === computerSelection){
-//             console.log(`You chosse ${humanSelection} and your opponent choose ${computerSelection}`)
-//             draw++
-            
-//         }
-//         else if(humanSelection === "scissor" && computerSelection === "paper"){
-//             console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
-//             console.log("You win")
-//             humanScore ++
-//         }
-//         else if(humanSelection === "paper" && computerSelection === "rock"){
-//             console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
-//             console.log("You win")
-//             humanScore ++
-//         }
-//         else if(humanSelection === "rock" && computerSelection === "scissor"){
-//             console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
-//             console.log("You win")
-//             humanScore ++
-//         }
-//         else{
-//             console.log(`You choose ${humanSelection} and your opponent choose ${computerSelection}`)
-//             console.log("Computer Wins")
-//             computerScore++
-//         }
-        
-//     }
-//         console.log("Your total score is " + humanScore)
-//         console.log("Your opponents score is " + computerScore)
-//         console.log("total draw is " + draw)
-    
-
-// }
-
-// function getComputerChoice(){
-//     const computerChoice = Math.floor(Math.random() * 3)
-//     if(computerChoice === 0){
-//         return "rock"
-//     }
-//     else if(computerChoice === 1){
-//         return "paper"
-//     }
-//     else if(computerChoice === 2){
-//         return "scissor"
-//     }
-// }
-// function getHumanChoice(){
-//     const humanChoice = prompt("Enter your Choice")
-//     return humanChoice
-
-// }
 let yourScore = document.getElementById("yourScoreValue")
 let opponentScore = document.getElementById("opponentScoreValue")
 const yourPickImg = document.getElementById("playerPick")
@@ -74,6 +8,10 @@ const scissorBtn = document.getElementById("scissorBtn")
 const rockImg = "assets/pngaaa.com-3313783.png"
 const paperImg = "assets/pngaaa.com-3313779.png"
 const scissorImg = "assets/clipart4288836.png"
+const divButtons = document.getElementById("buttons")
+const divRestart = document.getElementById("restart")
+const yesBtn = document.getElementById("yesResetBtn")
+const noBtn = document.getElementById("noResetBtn")
 
 
 let yourScoreCount = 0
@@ -81,6 +19,8 @@ let opponentScoreCount = 0
 let yourPick = 0
 let opponentPick = 0
 const opponents = getOpponentChoice()
+
+
 
 function playRound(){
     if(yourScoreCount === 5 && opponentScoreCount !==5 || yourScoreCount !==5 && opponentScoreCount === 5){
@@ -114,7 +54,6 @@ function playRound(){
         gameLogic(yourPick,opponentPick)
         
     })
-    
 }
 function getOpponentChoice(){
     const random = Math.floor(Math.random() *3)
@@ -162,5 +101,31 @@ function gameLogic(yourPick,opponentPick){
         
         
     }
+    if(isgameOver()){
+       retry()
+    }
+}
+function isgameOver(){
+    return yourScoreCount === 5 || opponentScoreCount === 5
+}
+function reset(){
+    yourScoreCount = 0
+    opponentScoreCount = 0
+    yourScore.textContent = yourScoreCount
+    opponentScore.textContent = opponentScoreCount
+}
+function retry(){
+    divButtons.classList.add("hide")
+    divRestart.classList.remove("hide")
+
+    yesBtn.addEventListener('click', ()=>{
+        divButtons.classList.remove("hide")
+        divRestart.classList.add("hide")
+        reset()
+    })
+    noBtn.addEventListener('click', ()=>{
+        document.body.classList.add("hide")
+    })
+
 }
 playRound()

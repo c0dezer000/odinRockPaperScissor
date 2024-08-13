@@ -59,7 +59,7 @@
     width: 40%;
     padding-top: 20px;
 }
-button{
+.btn{
     width: 150px;
     height: 150px;
     background: none;
@@ -68,9 +68,64 @@ button{
     overflow: hidden;
     cursor: pointer;
 }
-button:hover{
+.btn:hover{
     transform: scale(1.05);
 }
 .optionBtn{
     width: 148px;
+}
+
+.restart{
+    display: flex;
+    gap: 20px;
+}
+#yesResetBtn{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(116,218,226);
+}
+#noResetBtn{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(239,84,128);
+}
+#yesResetBtn:hover, #noResetBtn:hover{
+    transform: scale(1.05);
+}
+.yesOption{
+    border: 2px solid rgb(96,17,85);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    background-color: rgb(255,222,85);
+}
+.noOption{
+    border: 2px solid rgb(96,17,85);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    background-color: rgb(255,222,85);
+}
+.hide{
+    display: none;
 }
