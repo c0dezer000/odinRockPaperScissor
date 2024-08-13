@@ -3,7 +3,75 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+}
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 15%;
+}
+.myDisplay, .opponentsDisplay{
+    width: 550px;
+    height: 400px;
+    background-color: rgb(41,39,40);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+#yourScore, #opponentScore{
+    color: white;
+    font-size: 48px;
+    background-color: rgb(10,10,10);
+    width: 100%;
+    text-align: center;
+}
+#playerPick{
+    width: 300px;
+    height: 300px;
+    padding-top: 50px;
+}
+#opponentsPickPick{
+    width: 300px;
+    height: 300px;
+    padding-top: 50px;
+    transform: scaleX(-1);
+}
+.btnField{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    width: 40%;
+}
+button{
+    width: 150px;
+    height: 150px;
+    background: none;
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+button:hover{
+    transform: scale(1.05);
+}
+.optionBtn{
+    width: 148px;
+}
+/* body{
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,4 +86,4 @@ p{
     margin-top: 20px;
     text-transform: uppercase;
     font-weight: bolder;
-}
+} */

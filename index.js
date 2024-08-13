@@ -10,7 +10,7 @@ function playRound(){
         const computerSelection = getComputerChoice()
         const humanSelection = getHumanChoice()    
         if (humanSelection !== "rock" && humanSelection !== "paper" && humanSelection !== "scissor") {
-            return "Enter valid option";
+            prompt("Enter Valid option")
         }
     
         if(humanSelection === computerSelection){
